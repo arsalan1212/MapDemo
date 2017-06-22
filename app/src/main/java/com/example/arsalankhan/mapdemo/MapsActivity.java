@@ -61,7 +61,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     //getting the Current Location
 
-    private void getCurrentLocation() {
+/*    private void getCurrentLocation() {
         mMap.clear();
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -84,7 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             Toast.makeText(this, "Can not get Current Location", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     // moving the map
     private void moveMap(double latitude, double longitude) {
@@ -112,7 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        getCurrentLocation();
+       // getCurrentLocation();
 
         // --------------------*****************************-----------------------
 
@@ -120,7 +120,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Location Requestion will get the current location after every 1 second
         while getCurrentLocation will get the Current Location when the App is Launched
          */
-        
+
         LocationRequest locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(1000);
